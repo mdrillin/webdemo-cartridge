@@ -1,0 +1,18 @@
+<module xmlns="urn:jboss:module:1.1" name="org.apache.httpcomponents.async">
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+
+    <resources>
+        <resource-root path="httpcore-nio-4.2.4.jar"/>
+        <resource-root path="httpasyncclient-4.0-beta3.jar"/>
+        <!-- Insert resources here -->
+    </resources>
+
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="org.apache.commons.codec"/>
+        <module name="org.apache.commons.logging"/>        
+        <module name="org.apache.httpcomponents"/>
+    </dependencies>
+</module>

@@ -37,7 +37,7 @@
             <managedconnectionfactory-class>org.teiid.resource.adapter.mongodb.MongoDBManagedConnectionFactory</managedconnectionfactory-class>
 
             <config-property>
-               <description>{$display:"Server List", $description:"Server List (host:port[;host:port...]) to connect to", $required:"true"}</description>
+               <description>{$display:"URL/Server List", $description:"Server List (host:port[;host:port...]) to connect to; if value is in URL format (mongodb://localhost:27017/test) then this will override the credentials and database name if provided", $required:"true"}</description>
                <config-property-name>RemoteServerList</config-property-name>
                <config-property-type>java.lang.String</config-property-type>
             </config-property> 
@@ -55,11 +55,29 @@
             </config-property> 
             
             <config-property>
-               <description>{$display:"Database",$description:"MongoDB Database Name",$required:"true"}</description> 
+               <description>{$display:"Database",$description:"MongoDB Database Name; Required when not defined on the URL",$required:"optional"}</description> 
                <config-property-name>Database</config-property-name>
                <config-property-type>java.lang.String</config-property-type>
             </config-property>             
             
+            <config-property>
+                <description>{$display:"Authentication Mechanism",$allowed:["None","SCRAM_SHA_1","MONGODB_CR", "Kerberos","X509"], $description:"Type of Authentication to used", $required:"false"}</description>
+                <config-property-name>SecurityType</config-property-name>
+                <config-property-type>java.lang.String</config-property-type>
+            </config-property> 
+            
+            <config-property>
+               <description>{$display:"Authentication Database",$description:"MongoDB Database Name for user authentication in case of MONGODB-CR",$required:"optional"}</description> 
+               <config-property-name>AuthDatabase</config-property-name>
+               <config-property-type>java.lang.String</config-property-type>
+            </config-property>            
+            
+            <config-property>
+               <description>{$display:"Use SSL Connections",$description:"Use SSL Connections",$required:"optional"}</description> 
+               <config-property-name>Ssl</config-property-name>
+               <config-property-type>java.lang.Boolean</config-property-type>
+            </config-property>             
+                        
             <connectionfactory-interface>javax.resource.cci.ConnectionFactory</connectionfactory-interface>
             <connectionfactory-impl-class>org.teiid.resource.spi.WrappedConnectionFactory</connectionfactory-impl-class>
             <connection-interface>javax.resource.cci.Connection</connection-interface>

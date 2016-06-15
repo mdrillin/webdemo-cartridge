@@ -24,7 +24,7 @@
 
 <module xmlns="urn:jboss:module:1.1" name="org.jboss.dmr">
     <resources>
-        <resource-root path="jboss-dmr-1.2.0.Final-redhat-1.jar"/>
+        <resource-root path="jboss-dmr-1.2.1.Final-redhat-1.jar"/>
         <!-- Insert resources here -->
     </resources>
 

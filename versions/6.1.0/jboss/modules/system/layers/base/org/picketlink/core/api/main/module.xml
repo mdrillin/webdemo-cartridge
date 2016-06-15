@@ -25,7 +25,7 @@
 <module xmlns="urn:jboss:module:1.1" name="org.picketlink.core.api">
 
     <resources>
-        <resource-root path="picketlink-api-2.5.3.SP16-redhat-1.jar"/>
+        <resource-root path="picketlink-api-2.5.3.SP13-redhat-1.jar"/>
         <!-- Insert resources here -->
     </resources>
 
@@ -36,6 +36,7 @@
         <module name="javax.persistence.api" optional="true"/>
         <module name="org.picketlink.common"/>
         <module name="org.picketlink.idm.api" export="true"/>
+        <module name="org.jboss.logging"/>
     </dependencies>
 
   </module>

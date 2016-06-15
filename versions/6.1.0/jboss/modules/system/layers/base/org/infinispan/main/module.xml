@@ -27,7 +27,7 @@
     </properties>
 
     <resources>
-        <resource-root path="infinispan-core-5.2.10.Final-redhat-1.jar"/>
+        <resource-root path="infinispan-core-5.2.11.Final-redhat-1.jar"/>
         <!-- Insert resources here -->
     </resources>
 

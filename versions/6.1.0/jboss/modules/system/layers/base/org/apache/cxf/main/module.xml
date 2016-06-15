@@ -25,7 +25,7 @@
 <module xmlns="urn:jboss:module:1.1" name="org.apache.cxf">
 
     <resources>
-        <resource-root path="cxf-api-2.7.14.redhat-1.jar"/>
+        <resource-root path="cxf-api-2.7.13.redhat-4.jar"/>
         <!-- Insert resources here -->
     </resources>
 
@@ -43,6 +43,7 @@
         <module name="javax.wsdl4j.api" />
         <module name="javax.xml.bind.api" services="import"/>
         <module name="com.sun.xml.bind" services="import"/>
+        <module name="com.sun.xml.fastinfoset" optional="true"/>
         <module name="org.apache.neethi" />
         <module name="org.apache.ws.xmlschema" />
         <module name="org.codehaus.woodstox" />

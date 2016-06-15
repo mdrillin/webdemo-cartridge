@@ -1,7 +1,10 @@
 <module xmlns="urn:jboss:module:1.1" name="org.jboss.teiid.resource-adapter.infinispan" slot="6">
-   
+    <properties>
+        <property name="jboss.api" value="private"/>
+    </properties>
+       
     <resources>
-        <resource-root path="connector-infinispan.6-8.7.1.redhat-8.jar"/>
+        <resource-root path="connector-infinispan.6-8.12.4.jar"/>
         <resource-root path="." />
         <!-- Insert resources here -->
     </resources>
@@ -11,9 +14,10 @@
         <module name="javax.resource.api"/>
         <module name="org.jboss.teiid.common-core"/>
         <module name="org.jboss.teiid.api"/>
-        <module name="org.jboss.teiid.translator.object" export="true" />
+        <module name="org.jboss.teiid.translator.object"/>
+        <module name="org.jboss.teiid.translator.infinispan.cache"/>   
         <module name="org.jboss.modules"/>
         
-         <module name="org.infinispan" slot="jdg-6.4" optional="true"  export="true" />
+		<module name="org.infinispan" slot="jdg-6.5" optional="true" services="export"  export="true" />
     </dependencies>
 </module>

@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="commons-lang-2.6.redhat-3.jar"/>
+        <resource-root path="commons-lang-2.6.0.redhat-4.jar"/>
         <!-- Insert resources here -->
     </resources>
 

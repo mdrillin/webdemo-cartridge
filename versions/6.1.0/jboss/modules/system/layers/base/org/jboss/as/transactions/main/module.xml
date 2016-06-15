@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="jboss-as-transactions-7.4.3.Final-redhat-2.jar"/>
+        <resource-root path="jboss-as-transactions-7.5.0.Final-redhat-15.jar"/>
         <!-- Insert resources here -->
     </resources>
 
@@ -46,6 +46,7 @@
         <module name="org.jboss.logging"/>
         <module name="org.jboss.jts"/>
         <module name="org.jboss.jts.integration"/>
+        <module name="org.jboss.modules"/>
         <module name="org.omg.api"/>
         <module name="org.jboss.as.jacorb"/>
     </dependencies>

@@ -1,95 +1,151 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<parent>
-		<artifactId>connectors</artifactId>
-		<groupId>org.jboss.teiid</groupId>
-		<version>8.7.1.redhat-8</version>
-	</parent>
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>connector-infinispan.6</artifactId>
-	<groupId>org.jboss.teiid.connectors</groupId>
-	<name>Infinispan Connector 6</name>
-	<description>This connector creates the connection to the Infinispan Cache</description>
-	
-	<properties>
-        <!-- slot defined in the module  -->
-        <jdg.slot>jdg-6.4</jdg.slot>
-    </properties>	
+    <parent>
+        <artifactId>connectors</artifactId>
+        <groupId>org.jboss.teiid</groupId>
+        <version>8.12.4</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>connector-infinispan.6</artifactId>
+    <groupId>org.jboss.teiid.connectors</groupId>
+    <name>Infinispan Connector 6</name>
+    <description>This connector creates the connection to the Infinispan Cache</description>
+    	
+    <properties>
 
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.infinispan</groupId>
-				<artifactId>infinispan-client-hotrod</artifactId>
-				<version>${version.org.infinispan.6}</version>
-			</dependency>
+    </properties>   
 
-			<dependency>
-				<groupId>org.infinispan</groupId>
-				<artifactId>infinispan-server-hotrod</artifactId>
-				<version>${version.org.infinispan.6}</version>
-			</dependency>
-			<dependency>
-				<groupId>org.infinispan</groupId>
-				<artifactId>infinispan-core</artifactId>
-				<version>${version.org.infinispan.6}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-client-hotrod</artifactId>
+                <version>${version.org.infinispan.6}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-server-hotrod</artifactId>
+                <version>${version.org.infinispan.6}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-core</artifactId>
+                <version>${version.org.infinispan.6}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-commons</artifactId>
+                <version>${version.org.infinispan.6}</version>
+            </dependency> 
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-query</artifactId>
+                <version>${version.org.infinispan.6}</version>
+            </dependency>  
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-query-dsl</artifactId>
+                <version>${version.org.infinispan.6}</version>
+            </dependency>                           
+             <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-search-engine</artifactId>
+                <version>${version.org.infinispan.hibernate.search}</version>
+            </dependency>                        
+        </dependencies>
+    </dependencyManagement>
 
 
-	<dependencies>
+    <dependencies>
 
-		<dependency>
-			<groupId>org.jboss.teiid</groupId>
-			<artifactId>teiid-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.teiid</groupId>
-			<artifactId>teiid-common-core</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.teiid.connectors</groupId>
-			<artifactId>translator-object</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.jboss.teiid.connectors</groupId>
-			<artifactId>translator-object</artifactId>
-			<type>test-jar</type>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.jboss.teiid</groupId>
+            <artifactId>teiid-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.teiid</groupId>
+            <artifactId>teiid-common-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+         <dependency>
+            <groupId>org.jboss.teiid.connectors</groupId>
+            <artifactId>translator-infinispan-cache</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.teiid.connectors</groupId>
+            <artifactId>translator-infinispan-cache</artifactId>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>       
+        <dependency>
+            <groupId>org.jboss.teiid.connectors</groupId>
+            <artifactId>translator-object</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.teiid.connectors</groupId>
+            <artifactId>translator-object</artifactId>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>javax.resource</groupId>
-			<artifactId>connector-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
+        <dependency>
+            <groupId>javax.resource</groupId>
+            <artifactId>connector-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>org.jboss.modules</groupId>
-			<artifactId>jboss-modules</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.infinispan</groupId>
-			<artifactId>infinispan-client-hotrod</artifactId>
-			<scope>provided</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-search-engine</artifactId>
+            <scope>provided</scope>
+        </dependency>
 
-		<dependency>
-			<groupId>org.infinispan</groupId>
-			<artifactId>infinispan-server-hotrod</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.infinispan</groupId>
-			<artifactId>infinispan-core</artifactId>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
+        <dependency>
+            <groupId>org.jboss.modules</groupId>
+            <artifactId>jboss-modules</artifactId>
+            <scope>provided</scope>
+        </dependency>
+         <dependency>
+            <groupId>org.jboss.marshalling</groupId>
+            <artifactId>jboss-marshalling</artifactId>
+            <scope>provided</scope>
+        </dependency>       
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-client-hotrod</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-server-hotrod</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-commons</artifactId>
+            <scope>provided</scope>
+        </dependency>   
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-query</artifactId>
+            <scope>provided</scope>
+        </dependency>             
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-query-dsl</artifactId>
+            <scope>provided</scope>
+        </dependency>                
+    </dependencies>
 
 	<build>
 		<plugins>
@@ -136,7 +192,7 @@
 						<phase>package</phase>
 						<configuration>
 							<tasks>
-								<unzip src="${project.build.directory}/${project.artifactId}-${project.version}.rar" dest="${project.build.directory}/rar-unpack"></unzip>
+								<unzip src="${project.build.directory}/${project.artifactId}-${project.version}.rar" dest="${project.build.directory}/rar-unpack" />
 							</tasks>
 						</configuration>
 						<goals>
@@ -189,3 +245,4 @@
 		</plugins>
 	</build>
 </project>
+ 

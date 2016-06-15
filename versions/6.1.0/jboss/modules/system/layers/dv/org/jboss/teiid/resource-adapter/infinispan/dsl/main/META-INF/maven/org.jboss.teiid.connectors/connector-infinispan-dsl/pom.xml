@@ -3,7 +3,7 @@
     <parent>
         <artifactId>connectors</artifactId>
         <groupId>org.jboss.teiid</groupId>
-        <version>8.7.1.redhat-8</version>
+        <version>8.12.4</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>connector-infinispan-dsl</artifactId>
@@ -12,40 +12,40 @@
     <description>This connector creates the connection to the Infinispan Cache for querying using DSL</description>
 
     <dependencyManagement>
-		<dependencies>
-			<dependency>
-			  <groupId>org.infinispan</groupId>
-			  <artifactId>infinispan-client-hotrod</artifactId>
-			  <version>6.2.0.Final-redhat-4</version>
-			</dependency>  	   
-			<dependency>
-				<groupId>org.infinispan</groupId>
-				<artifactId>infinispan-commons</artifactId>
-			    <version>6.2.0.Final-redhat-4</version>
-			</dependency> 
-			 <dependency>
-		  		<groupId>org.infinispan</groupId>
-		  		<artifactId>infinispan-remote-query-client</artifactId>
-		  		<version>6.2.0.Final-redhat-4</version>
-			</dependency>	
-			<dependency>
-			    <groupId>org.infinispan</groupId>
-			    <artifactId>infinispan-query-dsl</artifactId>
-			    <version>6.2.0.Final-redhat-4</version>
-			</dependency>  
-			<dependency>
-		 		 <groupId>org.infinispan.protostream</groupId>
-		 		 <artifactId>protostream</artifactId>
-		  		 <version>3.0.0.Alpha8-redhat-1</version>
-			</dependency>																
-        </dependencies>	
+        <dependencies>
+            <dependency>
+              <groupId>org.infinispan</groupId>
+              <artifactId>infinispan-client-hotrod</artifactId>
+              <version>6.3.0.Final-redhat-5</version>
+            </dependency>      
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-commons</artifactId>
+                <version>6.3.0.Final-redhat-5</version>
+            </dependency> 
+             <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-remote-query-client</artifactId>
+                <version>6.3.0.Final-redhat-5</version>
+            </dependency>   
+            <dependency>
+                <groupId>org.infinispan</groupId>
+                <artifactId>infinispan-query-dsl</artifactId>
+                <version>6.3.0.Final-redhat-5</version>
+            </dependency>  
+            <dependency>
+                 <groupId>org.infinispan.protostream</groupId>
+                 <artifactId>protostream</artifactId>
+                 <version>3.0.0.Alpha8-redhat-1</version>
+            </dependency>                                                               
+        </dependencies> 
     </dependencyManagement>
     
     <dependencies>
- 		<dependency>
-		 	<groupId>org.jboss.teiid.connectors</groupId>
-		 	<artifactId>translator-infinispan-dsl</artifactId>
-		</dependency>
+        <dependency>
+            <groupId>org.jboss.teiid.connectors</groupId>
+            <artifactId>translator-infinispan-dsl</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.jboss.teiid</groupId>
             <artifactId>teiid-api</artifactId>
@@ -62,25 +62,25 @@
             <scope>provided</scope>
         </dependency>   
         <dependency>
-          	<groupId>org.infinispan</groupId>
-          	<artifactId>infinispan-client-hotrod</artifactId>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-client-hotrod</artifactId>
         </dependency>     
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-commons</artifactId>
         </dependency> 
-		<dependency>
-		  <groupId>org.infinispan</groupId>
-		  <artifactId>infinispan-remote-query-client</artifactId>
-		</dependency>   
-		<dependency>
-		    <groupId>org.infinispan</groupId>
-		    <artifactId>infinispan-query-dsl</artifactId>
-		</dependency>  
-		<dependency>
-		 	<groupId>org.infinispan.protostream</groupId>
-		 	<artifactId>protostream</artifactId>
-		</dependency> 		     
+        <dependency>
+          <groupId>org.infinispan</groupId>
+          <artifactId>infinispan-remote-query-client</artifactId>
+        </dependency>   
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-query-dsl</artifactId>
+        </dependency>  
+        <dependency>
+            <groupId>org.infinispan.protostream</groupId>
+            <artifactId>protostream</artifactId>
+        </dependency>            
         <dependency>
             <groupId>org.jboss.modules</groupId>
             <artifactId>jboss-modules</artifactId>
@@ -118,7 +118,7 @@
                             <goal>rar</goal>
                         </goals>
                         <configuration>
-                            <finalName>connector-infinispan-dsl-8.7.1.redhat-8</finalName>
+                            <finalName>connector-infinispan-dsl-8.12.4</finalName>
                         </configuration>
                     </execution>
                 </executions>
@@ -133,7 +133,7 @@
                         <phase>package</phase>
                         <configuration>
                             <tasks>
-                                <unzip src="/maven/build/teiid/connectors/connector-infinispan-dsl/target/connector-infinispan-dsl-8.7.1.redhat-8.rar" dest="/maven/build/teiid/connectors/connector-infinispan-dsl/target/rar-unpack"></unzip>
+                                <unzip src="/home/shawkins/workspaces/teiid-git/teiid/target/checkout/connectors/connector-infinispan-dsl/target/connector-infinispan-dsl-8.12.4.rar" dest="/home/shawkins/workspaces/teiid-git/teiid/target/checkout/connectors/connector-infinispan-dsl/target/rar-unpack" />
                             </tasks>
                         </configuration>
                         <goals>
@@ -155,7 +155,7 @@
                         <configuration>
                             <artifacts>
                                 <artifact>
-                                    <file>/maven/build/teiid/connectors/connector-infinispan-dsl/target/connector-infinispan-dsl-8.7.1.redhat-8.rar</file>
+                                    <file>/home/shawkins/workspaces/teiid-git/teiid/target/checkout/connectors/connector-infinispan-dsl/target/connector-infinispan-dsl-8.12.4.rar</file>
                                	 	<type>rar</type>
                                 </artifact>
                             </artifacts>
@@ -186,3 +186,4 @@
         </plugins>
     </build>
 </project>
+ 

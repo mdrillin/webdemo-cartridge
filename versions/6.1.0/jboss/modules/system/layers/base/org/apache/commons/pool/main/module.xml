@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="commons-pool-1.6.redhat-6.jar"/>
+        <resource-root path="commons-pool-1.6.0.redhat-7.jar"/>
         <!-- Insert resources here -->
     </resources>
 

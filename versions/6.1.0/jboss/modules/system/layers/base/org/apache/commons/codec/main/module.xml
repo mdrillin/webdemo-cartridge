@@ -28,7 +28,7 @@
     </properties>
 
     <resources>
-        <resource-root path="commons-codec-1.4.redhat-3.jar"/>
+        <resource-root path="commons-codec-1.4.0.redhat-4.jar"/>
         <!-- Insert resources here -->
     </resources>
 

@@ -3,7 +3,7 @@
 	<parent>
 		<artifactId>connectors</artifactId>
 		<groupId>org.jboss.teiid</groupId>
-        <version>8.7.1.redhat-8</version>
+        <version>8.12.4</version>
 	</parent>
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>connector-simpledb</artifactId>
@@ -32,6 +32,11 @@
 			<artifactId>simpledb-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <scope>test</scope>
+        </dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -78,7 +83,7 @@
                         <phase>package</phase>
                         <configuration>
                             <tasks>
-                                <unzip src="${project.build.directory}/${project.artifactId}-${project.version}.rar" dest="${project.build.directory}/rar-unpack"></unzip>
+                                <unzip src="${project.build.directory}/${project.artifactId}-${project.version}.rar" dest="${project.build.directory}/rar-unpack" />
                             </tasks>
                         </configuration>
                         <goals>
